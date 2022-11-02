@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 import AppNav from "./components/AppNav";
