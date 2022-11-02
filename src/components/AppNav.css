@@ -2,11 +2,12 @@
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-right: 50px;
+  align-items: center;
 }
 
 .navMenu ul li {
   padding: 10px;
+  margin: 0 20px;
 }
 
 .navMenu ul li a {
@@ -14,10 +15,11 @@
   font-weight: 600;
   color: rgba(12, 171, 219, 0.63);
   text-decoration: none;
+  background-color: rgb(209, 248, 235);
+  padding: 2px 10px 4px 10px;
+  border-radius: 20px;
 }
 
 .navMenu ul li a:hover {
-  font-size: 20px;
-  color: rgba(15, 62, 80, 0.685);
-  text-decoration: underline solid;
+  border: 2px solid rgba(0, 0, 0, 0.226);
 }
