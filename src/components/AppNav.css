@@ -10,7 +10,7 @@
   margin: 0 20px;
 }
 
-.navMenu ul li a {
+.link {
   font-size: 20px;
   font-weight: 600;
   color: rgba(12, 171, 219, 0.63);
@@ -18,8 +18,10 @@
   background-color: rgb(209, 248, 235);
   padding: 2px 10px 4px 10px;
   border-radius: 20px;
+  border: 3px solid rgb(224, 224, 224);
 }
 
-.navMenu ul li a:hover {
-  border: 2px solid rgba(0, 0, 0, 0.226);
+.link:hover {
+  border: 3px solid rgb(177, 176, 176);
+  transition: 0.3s ease-in;
 }

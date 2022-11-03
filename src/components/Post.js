@@ -2,7 +2,6 @@ import React from "react";
 import "./Post.css";
 
 const Post = (props) => {
-  console.log(props.post.user);
   return (
     <div className="post">
       <div className="postHeader">

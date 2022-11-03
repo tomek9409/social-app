@@ -11,6 +11,19 @@ const Home = (props) => {
       .post("http://akademia108.pl/api/social-app/post/latest")
       .then((res) => {
         setPosts(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const getNextPosts = () => {
+    axios
+      .post("https://akademia108.pl/api/social-app/post/older-then", {
+        date: posts[posts.length - 1].created_at,
+      })
+      .then((res) => {
+        setPosts(posts.concat(res.data));
         console.log(res.data);
       })
       .catch((error) => {
@@ -20,7 +33,7 @@ const Home = (props) => {
 
   useEffect(() => {
     getLatestPosts();
-  });
+  }, []);
 
   return (
     <div className="home">
@@ -29,6 +42,9 @@ const Home = (props) => {
           return <Post post={post} key={post.id} />;
         })}
       </div>
+      <button className="btn-loader" onClick={getNextPosts}>
+        Load more
+      </button>
     </div>
   );
 };

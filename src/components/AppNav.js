@@ -7,13 +7,19 @@ const AppNav = (props) => {
     <nav className="navMenu">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link className="link" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link className="link" to="/login">
+            Login
+          </Link>
         </li>
         <li>
-          <Link to="/signUp">Sign Up</Link>
+          <Link className="link" to="/signUp">
+            Sign Up
+          </Link>
         </li>
       </ul>
     </nav>
