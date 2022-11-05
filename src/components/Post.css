@@ -27,3 +27,21 @@
   text-align: right;
   padding: 10px;
 }
+
+@media all and (min-width: 568px) and (max-width: 768px) {
+  .post {
+    width: 500px;
+  }
+  .postContent {
+    width: 480px;
+  }
+}
+
+@media all and (max-width: 568px) {
+  .post {
+    width: 300px;
+  }
+  .postContent {
+    width: 280px;
+  }
+}

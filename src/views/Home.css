@@ -4,20 +4,3 @@
   justify-content: center;
   flex-direction: column;
 }
-
-.btn-loader {
-  font-size: 20px;
-  font-weight: 600;
-  color: rgba(12, 171, 219, 0.63);
-  background-color: rgb(209, 248, 235);
-  padding: 4px 10px 4px 10px;
-  border-radius: 20px;
-  margin: 10px 0 10px 0;
-  border: 3px solid rgb(224, 224, 224);
-  cursor: pointer;
-}
-
-.btn-loader:hover {
-  border: 3px solid rgb(177, 176, 176);
-  transition: 0.3s ease-in;
-}

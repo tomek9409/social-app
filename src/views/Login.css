@@ -1,0 +1,36 @@
+.login {
+  margin-top: 100px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.login form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(209, 248, 235);
+  padding: 30px;
+  border-top: 2px solid rgb(224, 224, 224);
+  border-bottom: 2px solid rgb(224, 224, 224);
+  margin-bottom: 40px;
+}
+
+.login form label {
+  margin: 5px 0;
+  width: 170px;
+}
+.login form input:focus {
+  outline: none;
+}
+
+.login form button {
+  background-color: #fff;
+  margin-top: 30px;
+}
+
+.login form button:hover {
+  border-color: rgb(97, 212, 172);
+  color: rgb(97, 212, 172);
+  transition: 0.3 linear;
+}

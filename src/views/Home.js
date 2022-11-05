@@ -24,7 +24,6 @@ const Home = (props) => {
       })
       .then((res) => {
         setPosts(posts.concat(res.data));
-        console.log(res.data);
       })
       .catch((error) => {
         console.error(error);
@@ -42,7 +41,7 @@ const Home = (props) => {
           return <Post post={post} key={post.id} />;
         })}
       </div>
-      <button className="btn-loader" onClick={getNextPosts}>
+      <button className="btn" onClick={getNextPosts}>
         Load more
       </button>
     </div>
