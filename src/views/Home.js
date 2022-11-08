@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
+import AddPost from "../components/AddPost";
 import "./Home.css";
 
 const Home = (props) => {
@@ -32,10 +33,24 @@ const Home = (props) => {
 
   useEffect(() => {
     getLatestPosts();
-  }, []);
+  }, [props.user]);
+
+  const getPrevPosts = () => {
+    axios
+      .post("https://akademia108.pl/api/social-app/post/newer-then", {
+        date: posts[0].created_at,
+      })
+      .then((res) => {
+        setPosts(res.data.concat(posts));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="home">
+      <AddPost getPrevPosts={getPrevPosts} />
       <div className="postList">
         {posts.map((post) => {
           return <Post post={post} key={post.id} />;
