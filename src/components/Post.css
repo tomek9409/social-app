@@ -1,27 +1,58 @@
 .post {
   margin: 20px 0;
   font-weight: 600;
-  background-color: rgb(209, 248, 235);
+  background-color: var(--bg-color);
   padding: 15px;
   border-radius: 20px;
   border: 3px rgb(183, 228, 228);
   border-style: solid solid none solid;
+}
+.postHeader {
+  padding: 10px 0;
 }
 
 .postHeader img {
   height: 50px;
   border-radius: 20px;
   margin-left: 0;
+  margin-bottom: 5px;
 }
 
 .postContent {
   width: 700px;
   text-align: left;
   margin: 10px 0;
+  border: 0.1px rgba(148, 148, 148, 0.301);
+  border-style: solid none solid none;
+  padding: 15px 0;
+}
+
+.postBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postBottom button {
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.postBottom button:hover {
+  color: rgba(1, 165, 1, 0.705);
+  border: solid rgba(0, 226, 0, 0.671);
+}
+
+.dislike {
+  color: red;
+  border: solid red;
+}
+.dislike:hover {
+  color: rgba(165, 1, 1, 0.705);
+  border: solid rgba(226, 0, 0, 0.671);
 }
 
 .postCreated {
-  text-align: right;
+  align-self: flex-end;
   padding: 10px;
 }
 

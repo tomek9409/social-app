@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
@@ -19,6 +20,7 @@ const Login = (props) => {
   };
 
   const [loginMessage, setLoginMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ const Login = (props) => {
           setLoginMessage("");
           props.setUser(res.data);
           localStorage.setItem("user", JSON.stringify(res.data));
+          navigate("/");
         }
       })
       .catch((error) => {

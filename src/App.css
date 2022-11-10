@@ -2,11 +2,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: rgb(215, 253, 237);
+  --color: rgba(12, 171, 219, 0.63);
+}
+
 .btn {
   font-size: 20px;
   font-weight: 600;
-  color: rgba(12, 171, 219, 0.63);
-  background-color: rgb(209, 248, 235);
+  color: var(--color);
+  background-color: var(--bg-color);
   padding: 4px 10px 4px 10px;
   border-radius: 20px;
   margin: 10px 0 10px 0;

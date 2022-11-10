@@ -26,14 +26,14 @@ const AddPost = (props) => {
   };
 
   return (
-    <div className="add-post">
+    <div className="addPost">
       <form onSubmit={addPost}>
         <textarea
           placeholder="What's happening?"
           value={postContent}
           onChange={(e) => setPostContent(e.target.value)}
         ></textarea>
-        <button className="btn-add">Add post</button>
+        <button className="btn">Add post</button>
       </form>
     </div>
   );

@@ -50,15 +50,24 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <AddPost getPrevPosts={getPrevPosts} />
-      <div className="postList">
-        {posts.map((post) => {
-          return <Post post={post} key={post.id} />;
-        })}
-      </div>
-      <button className="btn" onClick={getNextPosts}>
-        Load more
-      </button>
+      {!props.user && (
+        <div className="join">
+          Join to <br /> Social App
+        </div>
+      )}
+      {props.user && <AddPost getPrevPosts={getPrevPosts} />}
+      {props.user && (
+        <div className="postList">
+          {posts.map((post) => {
+            return <Post post={post} key={post.id} />;
+          })}
+        </div>
+      )}
+      {props.user && (
+        <button className="btn" onClick={getNextPosts}>
+          Load more
+        </button>
+      )}
     </div>
   );
 };
