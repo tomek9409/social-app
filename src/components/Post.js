@@ -22,8 +22,18 @@ const Post = (props) => {
         setLikeCount(likeCount + (isLiked ? -1 : 1));
         setDoesUserLiked(!isLiked);
       });
-
-    console.log(isLiked);
+  };
+  const unfollow = (id) => {
+    axios
+      .post("https://akademia108.pl/api/social-app/follows/disfollow", {
+        leader_id: id,
+      })
+      .then(() => {
+        props.getLatestPosts();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="post">
@@ -36,12 +46,17 @@ const Post = (props) => {
       </div>
       <div className="postBottom">
         <button
-          className="btn"
+          className="btn like"
           onClick={() => likePost(props.post.id, doesUserLiked)}
         >
           {doesUserLiked ? `Dislike` : "Like"}
         </button>
-
+        <button
+          className="btn unfollow"
+          onClick={() => unfollow(props.post.user.id)}
+        >
+          Unfollow
+        </button>
         <div className="postCreated">
           {props.post.user.created_at.slice(0, 10).replaceAll("-", "/")}
         </div>

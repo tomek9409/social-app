@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Post from "../components/Post";
 import AddPost from "../components/AddPost";
+import FollowRecommendations from "../components/FollowRecommendations";
 import "./Home.css";
 
 const Home = (props) => {
@@ -57,9 +58,18 @@ const Home = (props) => {
       )}
       {props.user && <AddPost getPrevPosts={getPrevPosts} />}
       {props.user && (
+        <FollowRecommendations
+          user={props.user}
+          getLatestPosts={getLatestPosts}
+          posts={posts}
+        />
+      )}
+      {props.user && (
         <div className="postList">
           {posts.map((post) => {
-            return <Post post={post} key={post.id} />;
+            return (
+              <Post post={post} key={post.id} getLatestPosts={getLatestPosts} />
+            );
           })}
         </div>
       )}

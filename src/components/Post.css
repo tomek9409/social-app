@@ -29,31 +29,35 @@
 
 .postBottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
-.postBottom button {
+.postBottom > * {
+  width: 90px;
+}
+.postBottom .btn {
   font-size: 15px;
   background-color: #fff;
 }
 
-.postBottom button:hover {
+.postBottom .like:hover {
   color: rgba(1, 165, 1, 0.705);
   border: solid rgba(0, 226, 0, 0.671);
 }
 
-.dislike {
-  color: red;
-  border: solid red;
-}
-.dislike:hover {
-  color: rgba(165, 1, 1, 0.705);
-  border: solid rgba(226, 0, 0, 0.671);
+.postBottom .unfollow {
+  flex: none;
 }
 
 .postCreated {
-  align-self: flex-end;
   padding: 10px;
+  margin-top: 5px;
+  object-fit: contain;
+}
+
+.postBottom .unfollow:hover {
+  color: rgba(255, 0, 0, 0.637);
+  border: solid rgba(255, 0, 0, 0.637);
 }
 
 @media all and (max-width: 768px) {
