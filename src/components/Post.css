@@ -29,7 +29,7 @@
 
 .postBottom {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .postBottom > * {
@@ -45,14 +45,22 @@
   border: solid rgba(0, 226, 0, 0.671);
 }
 
-.postBottom .unfollow {
-  flex: none;
+.postBottom .like {
 }
 
+.postBottom span {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 3px solid rgb(4, 228, 4);
+  margin-top: 10px;
+}
 .postCreated {
   padding: 10px;
   margin-top: 5px;
-  object-fit: contain;
 }
 
 .postBottom .unfollow:hover {

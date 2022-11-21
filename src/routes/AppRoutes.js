@@ -15,7 +15,7 @@ const AppRoutes = (props) => {
       >
         Login
       </Route>
-      <Route path="/signUp" element={<SignUp />}>
+      <Route path="/signUp" element={<SignUp user={props.user} />}>
         Sign Up
       </Route>
     </Routes>

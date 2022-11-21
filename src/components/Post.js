@@ -51,6 +51,7 @@ const Post = (props) => {
         >
           {doesUserLiked ? `Dislike` : "Like"}
         </button>
+        <span>{likeCount}</span>
         <button
           className="btn unfollow"
           onClick={() => unfollow(props.post.user.id)}

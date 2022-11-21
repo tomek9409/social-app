@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
@@ -20,7 +20,6 @@ const Login = (props) => {
   };
 
   const [loginMessage, setLoginMessage] = useState("");
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +32,7 @@ const Login = (props) => {
       .then((res) => {
         if (Array.isArray(res.data.username)) {
           setLoginMessage(res.data.username[0]);
-        } else if (res.data.password) {
+        } else if (Array.isArray(res.data.password)) {
           setLoginMessage(res.data.password[0]);
         } else if (res.data.error) {
           setLoginMessage("Błąd logowania");
@@ -41,8 +40,9 @@ const Login = (props) => {
           setLoginMessage("");
           props.setUser(res.data);
           localStorage.setItem("user", JSON.stringify(res.data));
-          navigate("/");
         }
+        props.setUser(res.data);
+        localStorage.setItem("user", JSON.stringify(res.data));
       })
       .catch((error) => {
         console.error(error);
@@ -51,7 +51,9 @@ const Login = (props) => {
 
   return (
     <div className="login">
+      {props.user && <Navigate to="/" />}
       <form onSubmit={handleSubmit}>
+        {loginMessage && <h2>{loginMessage}</h2>}
         <label>Login: </label>
         <input
           type="text"
