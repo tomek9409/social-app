@@ -70,6 +70,10 @@ const Login = (props) => {
         />
         <button className="btn">Log in</button>
       </form>
+      <p>
+        L: adam <br />
+        P: 1234
+      </p>
     </div>
   );
 };

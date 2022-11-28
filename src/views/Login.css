@@ -34,3 +34,8 @@
   color: rgb(97, 212, 172);
   transition: 0.3 linear;
 }
+
+form + p {
+  text-align: center;
+  color: rgb(167, 165, 165);
+}

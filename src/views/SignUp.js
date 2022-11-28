@@ -149,6 +149,7 @@ const SignUp = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
 
     if (!validate()) {
       return;
@@ -195,7 +196,7 @@ const SignUp = (props) => {
         <label>Password: </label>
         <input type="password" name="password" onChange={handleInputChange} />
         {errors.password && <p>{errors.password}</p>}
-        <label>Reapeat password: </label>
+        <label>Repeat password: </label>
         <input
           type="password"
           name="repeatPassword"
